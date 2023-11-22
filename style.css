@@ -9,11 +9,11 @@ hr {
 }
 
 #board {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
 
-    background-color: #cdc1b5;
-    border: 6px solid #bbada0;
+    background-color: transparent;
+    border: 6px solid rgb(84, 4, 84);
 
     margin: 0 auto;
     display: flex;
@@ -31,10 +31,12 @@ hr {
     justify-content: center;
     align-items: center;
 }
-
-
-/* colored tiles */
-
+body {
+    font-family: fantasy;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
 .x2 {
     background-color: #eee4da;
     color: #727371;
@@ -98,4 +100,35 @@ hr {
 .x8192 {
     background-color: #ff2020;
     color: white;
+}
+.leaderboard-container {
+  max-width: 500px;
+  margin: 50px;
+  background-color:transparent;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 80%;
+  margin-top: -30%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: transparent;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
 }
