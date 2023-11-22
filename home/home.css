@@ -16,7 +16,6 @@ body{
     margin-top: 15%;
   }
   
- 
   #welcome-lines {
     text-align: center;
     line-height:2;
@@ -26,7 +25,6 @@ body{
     color: #ff00eeba;
     font-weight: 600;
     font-size: 40px;
-    line-height:;
   }
   #input-area {
     margin-top: 40px;
