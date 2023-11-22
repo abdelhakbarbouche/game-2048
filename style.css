@@ -1,7 +1,10 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/800/976/857/background-texture-cube-abstraction-hd-wallpaper-preview.jpg");
+    background-image: url("https://avatars.mds.yandex.net/get-games/1892995/2a0000017bfd0a57086f7766cc436669b5f7/orig");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 hr {
@@ -13,7 +16,7 @@ hr {
     height: 600px;
 
     background-color: transparent;
-    border: 6px solid rgb(84, 4, 84);
+    border: 10px solid rgb(214, 111, 111);
 
     margin: 0 auto;
     display: flex;
@@ -109,7 +112,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-right: 80%;
-  margin-top: -30%;
+  margin-top: -40%;
 }
 
 table {
@@ -130,5 +133,8 @@ th {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #ddd;
+}
+tr{
+    color: #ddd;
 }
