@@ -138,3 +138,8 @@ h1 {
 tr{
     color: #ddd;
 }
+#sortButton{
+    background: transparent;
+    color:#ddd;
+    border:transparent;
+}
