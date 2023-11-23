@@ -24,8 +24,8 @@ hr {
 }
 
 .tile {
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
     border: 5px solid #bbada0;
 
     font-size: 40px;
@@ -142,4 +142,10 @@ tr{
     background: transparent;
     color:#ddd;
     border:transparent;
+}
+h2{
+    color: #ddd;
+}
+#score{
+    color: white ;
 }
