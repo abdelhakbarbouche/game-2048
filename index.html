@@ -6,7 +6,7 @@
         <meta name="description" content="Play the 2048 game and challenge your skills!">
         <title>2048</title>
         <link rel="stylesheet" href="style.css">
-        
+        <link rel="shortcut icon" href="https://image.shutterstock.com/image-illustration/2048-game-logo-design-professional-260nw-2324360039.jpg">
     </head>
 
     <body>
@@ -16,36 +16,27 @@
         <div id="board">
         </div>
         <div class="leaderboard-container">
-            <h1>Leaderboard</h1>
-            <table>
+          <h1>Leaderboard</h1>
+          <table id="leaderboard-table">
               <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Name</th>
-                  <th>Score</th>
-                </tr>
+                  <tr>
+                      <th>Rank</th>
+                      <th>Name</th>
+                      <th>Score</th>
+                  </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Player 1</td>
-                  <td>1000</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Player 2</td>
-                  <td>800</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Player 3</td>
-                  <td>600</td>
-                </tr>
-              </tbody>
-            </table>
-            <button id="sortButton">Sort Leaderboard</button>
-          </div>
-        
+              <tbody id="leaderboard-body">
+                <!-- Leaderboard entries will be added here dynamically -->
+            </tbody>
+              </table>
+          <form id="addPlayerForm">
+              <label for="playerName">Player Name:</label>
+              <input type="text" id="playerName" required>
+              <button type="button" onclick="addToLeaderboard()">Add to Leaderboard</button>
+          </form>
+          <button id="sortButton" onclick="sortLeaderboard()">Sort Leaderboard</button>
+      </div>
+  
 
 
 

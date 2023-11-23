@@ -2,20 +2,19 @@ var board;
 var score = 0;
 var rows = 4;
 var columns = 4;
+var leaderboard = []; // Assuming you have the leaderboard array defined
 
 window.onload = function() {
     setGame();
 }
 
 function setGame() {
-    
-
     board = [
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0]
-    ]
+    ];
 
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
@@ -28,7 +27,6 @@ function setGame() {
     }
     setTwo();
     setTwo();
-
 }
 
 function updateTile(tile, num) {
@@ -48,25 +46,25 @@ function updateTile(tile, num) {
 document.addEventListener('keyup', (e) => {
     if (e.code == "ArrowLeft") {
         slideLeft();
-        setTwo();
-    }
-    else if (e.code == "ArrowRight") {
+    } else if (e.code == "ArrowRight") {
         slideRight();
-        setTwo();
-    }
-    else if (e.code == "ArrowUp") {
+    } else if (e.code == "ArrowUp") {
         slideUp();
-        setTwo();
-
-    }
-    else if (e.code == "ArrowDown") {
+    } else if (e.code == "ArrowDown") {
         slideDown();
+    }
+
+    document.getElementById("score").innerText = score;
+
+    if (!canMove() && !hasEmptyTile()) {
+        alert("Game Over!");
+        addToLeaderboard();
+    } else {
         setTwo();
     }
-    document.getElementById("score").innerText = score;
-})
+});
 
-function filterZero(row){
+function filterZero(row) {
     return row.filter(num => num != 0);
 }
 
@@ -185,40 +183,68 @@ function canMove() {
     }
     return false;
 }
-document.addEventListener('keyup', (e) => {
-    if (e.code == "ArrowLeft") {
-        slideLeft();
-    } else if (e.code == "ArrowRight") {
-        slideRight();
-    } else if (e.code == "ArrowUp") {
-        slideUp();
-    } else if (e.code == "ArrowDown") {
-        slideDown();
-    }
 
-    document.getElementById("score").innerText = score;
-
-    if (!canMove() && !hasEmptyTile()) {
-        alert("Game Over!");
-        addPlayer(); // Call addPlayer function when the game is over
-    } else {
-        setTwo();
-    }
-});
-
-function addPlayer() {
+function addToLeaderboard() {
     const playerNameInput = document.getElementById("playerName");
     const playerName = playerNameInput.value.trim();
 
     if (playerName !== "") {
-        const newPlayer = { name: playerName, score: score };
-        leaderboard.push(newPlayer);
+        const existingPlayerIndex = leaderboard.findIndex(player => player.name === playerName);
+
+        if (existingPlayerIndex !== -1) {
+            // Update the existing player's score
+            leaderboard[existingPlayerIndex].score += score;
+        } else {
+            // Add a new player to the leaderboard
+            const newPlayer = { name: playerName, score: score };
+            leaderboard.push(newPlayer);
+        }
+
+        // Sort the leaderboard by score
         leaderboard.sort((a, b) => b.score - a.score);
+
+        // Update the leaderboard display
         updateLeaderboard();
+
+        // Reset the player name input
         playerNameInput.value = "";
+
+        // Clear the game board
+        clearBoard();
     } else {
         alert("Please enter a valid player name.");
     }
 }
 
+function clearBoard() {
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            tile.innerText = "";
+            tile.classList.value = "";
+            tile.classList.add("tile");
+        }
+    }
+}
 
+function updateLeaderboard() {
+    const leaderboardBody = document.getElementById("leaderboard-body");
+    leaderboardBody.innerHTML = ""; // Clear previous entries
+
+    leaderboard.forEach((player, index) => {
+        const row = document.createElement("tr");
+        const rankCell = document.createElement("td");
+        const nameCell = document.createElement("td");
+        const scoreCell = document.createElement("td");
+
+        rankCell.textContent = index + 1;
+        nameCell.textContent = player.name;
+        scoreCell.textContent = player.score;
+
+        row.appendChild(rankCell);
+        row.appendChild(nameCell);
+        row.appendChild(scoreCell);
+
+        leaderboardBody.appendChild(row);
+    });
+}
