@@ -200,7 +200,7 @@ document.addEventListener('keyup', (e) => {
 
     if (!canMove() && !hasEmptyTile()) {
         alert("Game Over!");
-        addPlayer(); // Call addPlayer function when the game is over
+        addPlayer(); 
     } else {
         setTwo();
     }
