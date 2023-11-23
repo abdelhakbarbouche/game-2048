@@ -16,14 +16,13 @@
         </div>
         <div id="input-area">
     <div class="form-inp">
-        <input placeholder="FirstName" type="text">
+        <input name="firstName" placeholder="FirstName" type="text">
     </div>
           <div class="form-inp">
-            <input placeholder="Email Address" type="email">
+            <input name="email" placeholder="Email Address" type="email">
           </div>
-        
           <div class="form-inp">
-            <input placeholder="Password" type="password">
+            <input name="password" placeholder="Password" type="password">
           </div>
         </div>
         <div id="submit-button-cvr">
@@ -31,6 +30,7 @@
         </div>
       </div>
     </form>
+    <div id="signup-message"></div>
     </div>
 <div id="guid">
 <div id="titre">Guide</div>
@@ -38,16 +38,19 @@
 </div>
 <div id="login">
   <div id="logintitre">Login</div>
+  <form action="index.html" method="post" id="login-form">
   <div class="form-inp">
-    <input placeholder="Email Address" type="email">
+    <input name="loginEmail" placeholder="Email Address" type="email">
   </div>
   <div class="form-inp">
-    <input placeholder="Password" type="password">
+    <input name="loginPassword" placeholder="Password" type="password">
   </div>
   <p><a href="">Forget Password</a></p>
   <div id="submit-button-cvr">
-    <button id="submit-button" type="submit">LOGIN IN</button>
-    
+    <button id="login-button" type="submit">LOGIN IN</button>
+  </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="home.js"></script>
 </body>
 </html>
