@@ -35,7 +35,7 @@ hr {
     align-items: center;
 }
 body {
-    font-family: fantasy;
+    font-family:Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -145,6 +145,7 @@ tr{
 }
 h2{
     color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #score{
     color: white ;
