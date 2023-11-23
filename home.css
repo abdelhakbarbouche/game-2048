@@ -1,6 +1,6 @@
 body{
     background-size:cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repea;
 }
 #form {
     display: grid;
@@ -12,7 +12,7 @@ body{
     box-shadow: 0px 15px 60px #c800ff;
     outline: 4px solid #ff00eeba;
     border-radius: 10px;
-    margin-left: 20%;
+    margin-left: 5%;
     margin-top: 15%;
   }
   
@@ -99,7 +99,7 @@ body{
     box-shadow: 0px 15px 60px #c800ff;
     outline: 4px solid #ff00eeba;
     border-radius: 10px;
-    margin-left: 50%;
+    margin-left: 70%;
     margin-top: -23.5%;
   }
   #titre{
@@ -113,5 +113,38 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     font-size:large;
   }
-  
-      
+  h1{
+    color:rgb(200, 0, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:800%;
+    margin-left: 40%;
+  }
+  h1:hover{
+    color: rgb(0, 89, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+      #login{
+        display: grid;
+        place-items: center;
+        width: 400px;
+        height: 390px;
+        padding: 25px;
+        background-color: #161616;
+        box-shadow: 0px 15px 60px #c800ff;
+        outline: 4px solid #ff00eeba;
+        border-radius: 10px;
+        margin-left: 35%;
+        margin-top: -23.5%;
+      }
+      #logintitre{
+        color: #ff00eeba;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+      }
+      a{
+        color:white
+      }
+      a:hover{
+        color: red;
+      }
